@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav div ul {
+    display: flex;
+    justify-content: space-between;   
+    text-decoration: none;
+    margin-left: 50;
+   background-color: rgb(217, 202, 140);
+   text-shadow: 2 2 2 rgb(233, 239, 185);
+   font-weight: 600;
+}
