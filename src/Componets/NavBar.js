@@ -1,8 +1,7 @@
 import React from "react";
-import logo from "./assets/logoFerreteria.png";
-import carrito from './assets/carrito.png'
-
-const Header= ()=>{
+import logo from "../assets/logoFerreteria.png";
+import ImgCarrito from './CardWidget'
+const NavBar= ()=>{
     return(
         <>
             <nav style={style.container}>
@@ -18,13 +17,14 @@ const Header= ()=>{
                         <a href="#" style={style.enlace}><li>Accesorios y Refacciones</li></a>
                     </ul>
                 <div>
-                    <img src={carrito} alt="carrito compras" width={30}/>
+                    <ImgCarrito/>
                 </div>
+                
             </nav>
         </>
     )
 }
-export default Header;
+export default NavBar;
 
 const style ={
     container:{
