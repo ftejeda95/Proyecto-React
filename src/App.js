@@ -1,9 +1,11 @@
 import React from 'react';
-import './App.css';
-import NavBar from './Componets/NavBar';
-import ItemListContainer from './Componets/ItemListContainer';
+import './style/App.css';
+import NavBar from './Components/NavBar';
+import ItemListContainer from './Components/ItemListContainer';
+import ItemCount from './Components/ItemCount';
 
 function App() {
+
   return (
     <>
     <NavBar />

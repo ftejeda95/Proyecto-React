@@ -1,0 +1,77 @@
+.slogan{
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.7rem;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 5px black;
+  text-align: center;
+
+} 
+body {
+  background-color:rgb(232, 250, 206);
+}
+
+.container{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: rgb(180, 201, 143);
+  }
+.lista{
+      display: flex;
+      font-family:'Kanit', sans-serif;
+      list-style: none;
+      width: 400px;
+      justify-content:space-between;
+      padding: 0px;
+      text-shadow: 2px 2px 2px rgb(233, 239, 185);
+      font-weight: 800;
+  }
+ .enlace{
+      text-decoration: none;
+      color: gray;
+  }
+ .logo{
+      border-radius:50px;
+      width:75px;
+  }
+.tittle{
+      font-family:'Kanit', sans-serif;
+      font-size:2rem;
+  }
+.itemCount{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+.itemCount div {
+  border:medium;
+  border-radius: 5px;
+  width: 90px;
+  border-color: darkgreen;
+  text-align: center;
+  font-size: 1.3rem;
+  text-shadow: 0px 0px 2px black;
+  color: gray;
+}
+.itemCount button{
+  border-radius: 5px;
+  width: 30px;
+  border-color: rgb(255, 255, 255);
+  background-color:  rgb(180, 201, 143);
+  color: gray;
+}
+.agregarCount{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+.agregarCarrito{
+  border-radius: 5px;
+  width: 150px;
+  border-color: rgb(255, 255, 255);
+  background-color:  rgb(180, 201, 143);
+  color: gray;
+  text-shadow: 2px 1px 2px white;
+
+}
