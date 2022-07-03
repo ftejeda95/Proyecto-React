@@ -1,0 +1,33 @@
+[{   
+    "id": "1",
+    "name":"clavo",
+    "img":"../assets/clavo.png",
+    "description":"esto es un clavo",
+    "stock":"100"
+},{   
+    "id": "2",
+    "name":"tornillo",
+    "img":"../assets/tornillo.png",
+    "description":"esto es un tornillo",
+    "stock":"50"
+},{   
+    "id": "3",
+    "name":"martillo",
+    "img":"../assets/martillo.png",
+    "description":"esto es un martillo",
+    "stock":"6"
+},{   
+    "id": "4",
+    "name":"destornillador",
+    "img":"../assets/destornillador.png",
+    "description":"esto es un destornillador",
+    "stock":"7"
+},{   
+    "id": "5",
+    "name":"pinza",
+    "img":"../assets/pinza.png",
+    "description":"esto es una pinza",
+    "stock":"5"
+}
+]
+

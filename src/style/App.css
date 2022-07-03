@@ -9,6 +9,7 @@
 } 
 body {
   background-color:rgb(232, 250, 206);
+  font-family:'Kanit', sans-serif;
 }
 
 .container{
@@ -43,6 +44,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: white;
+  margin-top: 50px;
 }
 .itemCount div {
   border:medium;
@@ -74,4 +76,55 @@ body {
   color: gray;
   text-shadow: 2px 1px 2px white;
 
+}
+.card{
+  background-color: rgb(180, 201, 143);
+  text-align: center;
+  width: 250px;
+  border-radius: 5px;
+  border: initial;
+  box-shadow: 2px 2px 5px black;
+}
+.card img{
+  border-radius: 5px;
+}
+.tittleCard{
+  text-transform: capitalize;
+  color: gray;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 5px black;
+  text-align: center;
+
+}
+.textCard{
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-transform:uppercase;
+  font-weight:900;
+}
+.buttonCard{
+  border-radius: 5px;
+  width: 70px;
+  border-color: rgb(255, 255, 255);
+  background-color:rgb(232, 250, 206);
+  color: gray;
+  text-align: center;
+  box-shadow: 2px 2px 2px rgb(110, 153, 110);
+}
+.ItemCard{
+  display: flex;
+  justify-content: space-around;
+
+}
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height:500px;
 }
