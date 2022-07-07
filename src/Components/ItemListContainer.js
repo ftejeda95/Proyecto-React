@@ -2,6 +2,7 @@ import React, { useEffect,useState } from "react";
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import { PuffLoader  } from "react-spinners";
+
 const initialProduct= [
     {   
     id: "1",
@@ -34,12 +35,6 @@ const initialProduct= [
     description:"esto es una pinza",
     price:"700"}]
 
-const promise= new Promise ((resolve,reject) =>{
-    setTimeout(()=>{
-        resolve(initialProduct);
-    },2000);
-});
-
 
 const ItemListContainer = ({valor})=> {
     
@@ -47,8 +42,12 @@ const ItemListContainer = ({valor})=> {
     const [loading,setLoading]=useState([true])
     
     useEffect(()=>{
-    promise.then((data)=> setProduct(data))
-        .finally(()=>setLoading(false))
+        fetch("/json/Product.json")
+            .then(res=> res.json())
+            .then(data=>setTimeout(()=>{
+                setProduct(data);},2000) )
+
+            .finally(()=>setLoading(false))
     });
 
     const agregar =(count) => alert(`Se agregaron ${count} al Carrito`)
@@ -63,4 +62,4 @@ const ItemListContainer = ({valor})=> {
         
     </>
 }
-export default ItemListContainer
+export {ItemListContainer , initialProduct}

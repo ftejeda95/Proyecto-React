@@ -128,3 +128,40 @@ body {
   text-align: center;
   height:500px;
 }
+.divDetail{
+  display:block;
+  justify-items: center;
+  align-items: center;
+}
+.buttonDetail{
+  margin-left: 550px;
+justify-self: center;
+text-align: center;
+border-radius: 5px;
+width: 300px;
+border-color: rgb(255, 255, 255);
+background-color:  rgb(180, 201, 143);
+color: gray;
+}
+.divDetail img{
+margin-left: 550px;
+  width: 250px;
+}
+.titleDetail{
+  text-align: center;
+  text-transform: capitalize;
+  color: gray;
+  font-weight: 700;
+  font-size: 1.7rem;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 5px black;
+  text-align: center;
+}
+.textDetail{
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-transform:uppercase;
+  font-weight:900;
+}
