@@ -1,0 +1,8 @@
+[{   
+    "id": "11",
+    "title":"equipo de pintura",
+    "pictureUrl":"https://res.cloudinary.com/facuindex/image/upload/v1657408332/React/maquinas/equipo-pintura_cst89c.jpg",
+    "description":"esto es un equipo de pintura",
+    "price":"4000",
+    "category":"maquinas"
+}]

@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import { PuffLoader } from "react-spinners";
+import { ScaleLoader } from "react-spinners";
 import {useParams} from "react-router-dom"
 
 
-const ItemDetailContainer = ({id})=> {
+const ItemDetailContainer = ()=> {
     const [products,setProduct]=useState([])
     const [loaded,setLoad]=useState([true])
 
-    
+    const {itemId} = useParams()
+
     useEffect(()=>{
-        fetch(`/json/${id}.json`)
+
+        fetch(`/json/items/${itemId}.json`)
             .then(res=> res.json())
-            .then(data=>setTimeout(()=>{
-                setProduct(data);},2000) )
+            .then(data=>setProduct(data)) 
 
             .finally(()=>setLoad(false))
-    },[id]);
+    },[itemId]);
 
-    return (<>{loaded ? <div className="spinner"><PuffLoader  color="#82f682" speedMultiplier={2}  /></div>:<ItemDetail products={products}/>}</>)
+    return (<>{loaded ? <div className="spinner"><ScaleLoader  color="#82f682" speedMultiplier={2} /></div>:<ItemDetail products={products}/>}</>)
 }
 export default ItemDetailContainer

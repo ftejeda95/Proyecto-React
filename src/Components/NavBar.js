@@ -2,23 +2,28 @@ import React from "react";
 import logo from "../assets/logoFerreteria.png";
 import CardWidget from './CardWidget'
 import '../style/App.css'
+import { Link,NavLink } from "react-router-dom";
+
+const categories = [
+    {nameRoute:"maquinas",categoryID:1,route:"/category/maquinas"},
+    {nameRoute:"herramientas",categoryID:2,route:"/category/herramientas"},
+    {nameRoute:"electricidad",categoryID:3,route:"/category/electricidad"}
+]
 const NavBar= ()=>{
     return(
         <>
             <nav className="container">
                 <div>
-                    <img src={logo} alt="Logo Ferreteria" className="logo"/>
+                    <Link to="/"><img src={logo} alt="Logo Ferreteria" className="logo"/></Link>
                 </div>
                 <div>
                     <h1 className="tittle">Ferreteria Bustamante</h1>
                 </div>
                     <ul className="lista">
-                        <a href="#" className="enlace"><li>Maquinas</li></a>
-                        <a href="#" className="enlace"><li>Herramientas</li></a>
-                        <a href="#" className="enlace"><li>Accesorios y Refacciones</li></a>
+                        {categories.map((category)=><NavLink to={category.route} className="enlace" key={category.categoryID}><li className="listaItem">{category.nameRoute}</li></NavLink>)}
                     </ul>
                 <div>
-                    <CardWidget/>
+                    <Link to="/cart"><CardWidget/></Link>
                 </div>
                 
             </nav>

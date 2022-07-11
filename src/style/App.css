@@ -16,22 +16,45 @@ body {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background-color: rgb(180, 201, 143);
+      background-color:#009929;
   }
 .lista{
       display: flex;
+      justify-content:space-between;
       font-family:'Kanit', sans-serif;
       list-style: none;
-      width: 400px;
-      justify-content:space-between;
+      width: 450px;
+      margin: 0;
       padding: 0px;
-      text-shadow: 2px 2px 2px rgb(233, 239, 185);
+      text-shadow: 2px 2px 2px #000000;
       font-weight: 800;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      max-height: 100px;
   }
+.listaItem{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  transition:  background-color 1s;
+  width: 150px;
+  justify-content: center;
+}
+.listaItem:hover{
+  background-color: #ffff36a0;
+}
  .enlace{
-      text-decoration: none;
-      color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    padding: auto;  
+
+    
   }
+
  .logo{
       border-radius:50px;
       width:75px;
@@ -78,19 +101,23 @@ body {
 
 }
 .card{
-  background-color: rgb(180, 201, 143);
+  background-color: #ffffff;
   text-align: center;
-  width: 250px;
+  width: 300px;
   border-radius: 5px;
   border: initial;
   box-shadow: 2px 2px 5px black;
+  justify-content: center;
+  transition: background-color 1s;
+}
+.card:hover{
+  background-color: #72cb10;
 }
 .card img{
   border-radius: 5px;
 }
 .tittleCard{
   text-transform: capitalize;
-  color: gray;
   font-weight: 700;
   text-align: center;
   font-size: 1.7rem;
@@ -106,20 +133,26 @@ body {
   text-align: center;
   text-transform:uppercase;
   font-weight:900;
+  height: 70px;
 }
 .buttonCard{
-  border-radius: 5px;
-  width: 70px;
-  border-color: rgb(255, 255, 255);
-  background-color:rgb(232, 250, 206);
-  color: gray;
+  background-color: white;
+  border: 2px solid #009929;
+  color:#009929;
+  padding: 15px 32px;
   text-align: center;
-  box-shadow: 2px 2px 2px rgb(110, 153, 110);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px black;
 }
-.ItemCard{
-  display: flex;
-  justify-content: space-around;
 
+.ItemCard{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  justify-content: space-around;
+  gap: 45px;
 }
 .spinner{
   display: flex;
@@ -129,25 +162,31 @@ body {
   height:500px;
 }
 .divDetail{
-  display:block;
-  justify-items: center;
-  align-items: center;
+  display:grid;
+  grid-template-areas:
+  "img img img title title"
+  "img img img title title"
+  "img img img text text"
+  "img img img text text"
+  "img img img price price"
+  "img img img button button";
+
 }
 .buttonDetail{
-  margin-left: 550px;
+grid-area: button;
 justify-self: center;
-text-align: center;
 border-radius: 5px;
 width: 300px;
 border-color: rgb(255, 255, 255);
 background-color:  rgb(180, 201, 143);
 color: gray;
 }
-.divDetail img{
-margin-left: 550px;
-  width: 250px;
+.imgDetail{
+  grid-area: img;
+  width: 550px;
 }
 .titleDetail{
+  grid-area: title;
   text-align: center;
   text-transform: capitalize;
   color: gray;
@@ -159,9 +198,18 @@ margin-left: 550px;
   text-align: center;
 }
 .textDetail{
+  grid-area: text;
   font-size: 1.5rem;
   color: rgb(0, 0, 0);
   text-align: center;
   text-transform:uppercase;
   font-weight:900;
+}
+.priceDetail{
+  grid-area: price ;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  text-transform:uppercase;
+  font-weight:900;
+  justify-self: center;
 }
