@@ -25,7 +25,6 @@ const ItemListContainer = ({greeting})=> {
 
     },[categoryId]);
 
-    const agregar =(count) => alert(`Se agregaron ${count} al Carrito`)
     
     return <> 
         <h2 className="slogan">
@@ -35,7 +34,6 @@ const ItemListContainer = ({greeting})=> {
 
         {loading ? <div className="spinner"><ScaleLoader  color="#82f682" /></div>: <ItemList products={products}/>}
         
-        <ItemCount initial={1} stock={5} onAdd={agregar}/>
 
         
     </>
