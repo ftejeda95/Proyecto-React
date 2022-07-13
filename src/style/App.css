@@ -134,7 +134,8 @@ body {
   "img img price price price"
   "img img itemCount itemCount itemCount"
 ;
-  
+grid-template-rows: 100px 1fr 1fr 75px; 
+
 }
 .buttonDetail{
 grid-area: button;
@@ -190,7 +191,7 @@ width: 250px;
   display: inline-block;
   justify-content: center;
   grid-area: itemCount;
-
+  margin: 100px;
 }
 .itemButton{
   display: flex;
@@ -236,10 +237,13 @@ width: 250px;
   font-size: 16px;
   border-radius: 4px;
   box-shadow: 1px 1px 2px black;
+
 }
 .buttonCompra{
   display: flex;
-  justify-items: center;
+  justify-content: space-around;
+  grid-area: itemCount;
+  margin: 100px;
 }
 .buttonCompra button{
   justify-self: center;

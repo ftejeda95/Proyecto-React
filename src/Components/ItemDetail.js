@@ -7,9 +7,9 @@ const ItemDetail = ({products}) =>{
 
     const [finalized,setFinalized]= useState(true)
 
-    const agregar =(count) => {
+    const onAdd =(quantityToAdd) => {
         setFinalized(false)
-        alert(`Se agregaron ${count} al Carrito`)}
+        alert(`Se agregaron ${quantityToAdd} al Carrito`)}
 
     return(products.map(product=> (
     <div className="divDetail" key={product.id}>
@@ -17,7 +17,7 @@ const ItemDetail = ({products}) =>{
         <img src={product.pictureUrl} className="imgDetail"/>
         <p className="textDetail">CARACTERISTICA:{product.description}</p>
         <p className="priceDetail">PRECIO POR UNIDAD: ${product.price}</p>
-        {finalized ? <ItemCount initial={1} stock={5} onAdd={agregar} className="countDetail"/> : <div className="itemCount"><Link to="/cart"><button className="agregarCarrito">Finalizar Compra</button></Link> <Link to="/"><button className="agregarCarrito">Seguir Comprando</button></Link></div>}
+        {finalized ? <ItemCount initial={1} stock={5} onAdd={onAdd} className="countDetail"/> : <div className="buttonCompra"><Link to="/cart"><button className="agregarCarrito">Finalizar Compra</button></Link> <Link to="/"><button className="agregarCarrito">Seguir Comprando</button></Link></div>}
     </div>)))
 }   
 
