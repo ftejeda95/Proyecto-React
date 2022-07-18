@@ -1,5 +1,4 @@
-import React, { useEffect,useState } from "react";
-import ItemCount from "./ItemCount";
+import React, { useEffect , useState } from "react";
 import ItemList from "./ItemList";
 import { ScaleLoader  } from "react-spinners";
 import { useParams } from "react-router";
