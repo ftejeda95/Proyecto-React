@@ -8,7 +8,7 @@ const Cart = () =>{
 
 
      return(
-      QuantityProducts === 0 ? <h3 className="tittle">No hay producto en el Carrito,  <Link to="/" className="toHome">Haga click aquí </Link> para agregar Productos.</h3>
+      QuantityProducts === 0 ? <h3 className="tittle">¡El carrito esta vacío! <Link to="/" className="toHome"> Haga click aquí </Link> para agregar Productos.</h3>
       :
       <div>
         <div  className="itemCartDetail">

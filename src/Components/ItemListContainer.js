@@ -2,8 +2,8 @@ import React, { useEffect , useState } from "react";
 import ItemList from "./ItemList";
 import { ScaleLoader  } from "react-spinners";
 import { useParams } from "react-router";
-
-
+import { db } from "../Firebase/Firebase"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 const ItemListContainer = ({greeting})=> {
     
@@ -11,16 +11,22 @@ const ItemListContainer = ({greeting})=> {
     const [loading,setLoading]=useState([true])
 
     const {categoryId} = useParams()
-  
+    console.log(categoryId)
     useEffect(()=>{
+        const productsCollection = collection(db,"Products");
+        const q = query(productsCollection, where("category","==",`${categoryId}`))
+        const categories = categoryId ? q : productsCollection
+        getDocs(categories)
+        .then(result => {
+            const lista = result.docs.map(doc => {
+                return{
+                    id:doc.id,
+                    ...doc.data()}
+            })
+            setProduct(lista)
+        })
+        .finally(()=>setLoading(false))
 
-        const URL = categoryId ? `/json/categories/${categoryId}.json` : "/json/Product.json"
-
-        fetch(URL)
-            .then(res=> res.json())
-            .then(data=>setProduct(data))
-
-            .finally(()=>setLoading(false))
 
     },[categoryId]);
 

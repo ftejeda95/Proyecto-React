@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { ScaleLoader } from "react-spinners";
 import {useParams} from "react-router-dom"
-
+import { db } from "../Firebase/Firebase";
+import { getDoc, collection, doc } from "firebase/firestore";
 
 
 const ItemDetailContainer = ()=> {
@@ -15,17 +16,22 @@ const ItemDetailContainer = ()=> {
     const {itemId} = useParams()
 
     useEffect(()=>{
-
-        fetch(`/json/items/${itemId}.json`)
-            .then(res=> res.json())
-            .then(data=>setProduct(data)) 
-
-            .finally(()=>setLoad(false))
+        const productCollection = collection(db,"Products")
+        const refDoc = doc(productCollection,itemId)
+        getDoc(refDoc)
+        .then(result=>{
+            const producto = {
+                id:result.id,
+                ...result.data()
+            }
+            setProduct(producto)
+        })
+        .finally(()=>setLoad(false))
             
     },[itemId]);
     return (<>{loaded ? 
                 <div className="spinner"><ScaleLoader  color="#82f682" speedMultiplier={2} /></div>:
-                <ItemDetail products={products[0]}/>}
+                <ItemDetail products={products}/>}
                 
                 </>)
 }
