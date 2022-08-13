@@ -4,6 +4,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../Firebase/Firebase";
 import { UseForm } from "./UseForm";
 import { ScaleLoader } from "react-spinners";
+import Swal from "sweetalert2";
 
 const Form = () => {
   const { products, Price, Clear } = useContext(cartContext);
@@ -13,14 +14,20 @@ const Form = () => {
 
   const finalizarCompra = () => {
     const ventasCollection = collection(db, "ventas");
-    addDoc(ventasCollection, {
-      buyer,
-      items: products,
-      date: serverTimestamp(),
-      total: Price,
-    }).then((result) => {
-      return (setIdVenta(result.id), Clear());
-    }).finally(setLoading(false));
+    Object.keys(errors).length === 0 ? addDoc(ventasCollection, {
+                    buyer,
+                    items: products,
+                    date: serverTimestamp(),
+                    total: Price,
+                  }).then((result) => {
+                    return (setIdVenta(result.id), Clear());
+                  }).finally(setLoading(false)) 
+              :
+                 Swal.fire({
+                  icon: 'error',
+                  title: 'No cumple con los requisitos del formulario',
+                  text: 'Producto sin Stock',
+    });
   };
 
   return (

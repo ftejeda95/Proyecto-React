@@ -1,12 +1,16 @@
 import React,{useState} from "react";
-
+import Swal from "sweetalert2";
 
 const ItemCount = ({initial, stock, onAdd}) => {
 
     const [contador,setContador] = useState(initial);
 
     const buttonClickSuma=()=>{
-        contador < stock ? setContador(contador + 1) : alert("Ha seleccionado el Stock Total Disponible");
+        contador < stock ? setContador(contador + 1) : Swal.fire({
+            icon: 'error',
+            title: 'Superas la cantidad maxima en stock',
+            text: 'Producto sin Stock',
+          });
     };
 
     const buttonClickResta=()=>{
@@ -14,7 +18,11 @@ const ItemCount = ({initial, stock, onAdd}) => {
     };
 
     const AddCarrito = ()=>{
-        stock > 0 ? onAdd(contador): alert("Producto sin Stock");
+        stock > 0 ? onAdd(contador): Swal.fire({
+            icon: 'error',
+            title: 'Superas la cantidad maxima en stock',
+            text: 'Producto sin Stock',
+          });
     };
 
     

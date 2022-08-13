@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import logo from "../../assets/logoFerreteria.png";
 import CardWidget from './CardWidget'
 import '../../style/App.css'
 import { Link,NavLink } from "react-router-dom";
@@ -19,7 +18,7 @@ const NavBar= ()=>{
         <>
             <nav className="container">
                 <div>
-                    <Link to="/"><img src={logo} alt="Logo Ferreteria" className="logo"/></Link>
+                    <Link to="/"><img src="https://res.cloudinary.com/facuindex/image/upload/v1656883913/React/assets/logoFerreteria_byfkpl.png" alt="Logo Ferreteria" className="logo"/></Link>
                 </div>
                 <div>
                     <h1 className="tittle">Ferreteria Bustamante</h1>

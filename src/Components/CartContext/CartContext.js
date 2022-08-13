@@ -1,5 +1,5 @@
 import React , { createContext, useEffect, useState } from "react";
-
+import Swal from "sweetalert2";
 
 export const cartContext= createContext();
 const { Provider }= cartContext;
@@ -28,7 +28,11 @@ const CartContext= ({children}) =>{
             const index = products.indexOf(found);
             const aux = [...products];
             const inStock = aux[index].stock >= (aux[index].qty + quantityToAdd);
-            inStock ? aux[index].qty += product.qty : alert("La cantidad seleccionada no esta Disponible");
+            inStock ? aux[index].qty += product.qty : Swal.fire({
+              icon: 'error',
+              title: 'Superas la cantidad maxima en stock',
+              text: 'La cantidad seleccionada no esta Disponible',
+            });
             setProducts(aux);
 
         }else(setProducts([...products,product]));
