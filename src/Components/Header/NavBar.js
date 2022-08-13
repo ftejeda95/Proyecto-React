@@ -1,19 +1,20 @@
 import React, { useContext } from "react";
-import logo from "../assets/logoFerreteria.png";
+import logo from "../../assets/logoFerreteria.png";
 import CardWidget from './CardWidget'
-import '../style/App.css'
+import '../../style/App.css'
 import { Link,NavLink } from "react-router-dom";
-import { cartContext } from "./CartContext";
+import { cartContext } from "../CartContext/CartContext";
 
 const categories = [
     {nameRoute:"maquinas",categoryID:1,route:"/category/maquinas"},
     {nameRoute:"herramientas",categoryID:2,route:"/category/herramientas"},
     {nameRoute:"electricidad",categoryID:3,route:"/category/electricidad"}
-]
+];
 
 
 const NavBar= ()=>{
-    const {QuantityProducts} = useContext(cartContext)
+    const {QuantityProducts} = useContext(cartContext);
+    
     return(
         <>
             <nav className="container">
@@ -34,37 +35,6 @@ const NavBar= ()=>{
             </nav>
             
         </>
-    )
-}
+    );
+};
 export default NavBar;
-
-// const style ={
-//     container:{
-//         display: "flex",
-//         justifyContent: "space-around",
-//         alignItems: "center",
-//         backgroundColor: "rgb(180, 201, 143)"
-//     },
-//     lista:{
-//         fontFamily:"'Kanit', sans-serif",
-//         listStyle: "none",
-//         width:400,
-//         display: "viewport > 770px" ? "flex":"none",
-//         justifyContent:" space-between",
-//         padding: 0,
-//         textShadow: "2px 2px 2px rgb(233, 239, 185)",
-//         fontWeight: 800,
-//     },
-//     enlace:{
-//         textDecoration: "none",
-//         color: "gray",
-//     },
-//     logo:{
-//         borderRadius:50,
-//         width:75
-//     },
-//     tittle:{
-//         fontFamily:"'Kanit', sans-serif",
-//         fontZice:"2rem"
-//     }
-// }

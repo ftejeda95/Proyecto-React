@@ -1,12 +1,13 @@
 import React from 'react';
 import './style/App.css';
-import NavBar from './Components/NavBar';
-import ItemListContainer from './Components/ItemListContainer';
-import ItemDetailContainer from './Components/ItemDetailContainer';
+import NavBar from './Components/Header/NavBar';
+import ItemListContainer from './Components/ItemList/ItemListContainer';
+import ItemDetailContainer from './Components/ItemDetail/ItemDetailContainer';
 import {  BrowserRouter,  Routes,  Route,} from "react-router-dom";
-import Cart from './Components/Cart';
-import CartContex from './Components/CartContext'
-import Form from './Components/Form';
+import Cart from './Components/Cart/Cart';
+import CartContex from './Components/CartContext/CartContext'
+import Form from './Components/Form/Form';
+import Footer from './Components/Footer/Footer';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/form' element={<Form/>}/>
       </Routes>
+      <Footer/>
     </CartContex>
     </BrowserRouter>   );
 
